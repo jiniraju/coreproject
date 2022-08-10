@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <form method="post" action="{% url 'Edit_Profile' %} ">
+        {% csrf_token %}
+
+
+        <fieldset>
+            <legend>Staff profile edit</legend>
+        
+            <label>Edit First Name :</label>
+            <input type="text" name="firstname" value="{{ user.first_name }}"><br><br>
+            <label>Edit Last Name :</label>
+            <input type="text" name="student_name" value="{{ user.last_name }}"><br><br>
+            <label>Edit  Username :</label>
+            <input type="text" name="username" value="{{ user.username }}"><br><br>
+            <label>Edit  Address:</label>
+            <input type="text" name="address" value="{{ edit.Staff_Address }}"><br><br>
+            <label>Edit  Age :</label>
+            <input type="number" name="age" value="{{ edit.Staff_Age }}"><br><br>
+            <label>Edit Gender :</label>
+            <input type="text" name="gender" value="{{ edit.Staff_Gender }}"><br><br>
+            <label>Edit  Email :</label>
+            <input type="email" name="email" value="{{ user.email }}"><br><br>                                                              
+           <input type="file" name="photo" id="" accept="image/*">
+            <button type="submit" onclick="">Update</button>
+            
+
+        </fieldset>
+    </form>
+    </div>
+</body>
+
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    #btn{
+    height: 30px;
+    width: 80px;
+    margin-left: 20px;
+    }
+    #btn:hover{
+ 
+        background-color: blueviolet;
+        border :none;
+    }
+    legend {
+    background-color: rgb(155, 50, 50);
+    color: white;
+    padding: 5px 10px;
+    margin-bottom:30px ;
+
+    }
+    fieldset{
+        width: 600px; 
+        /* height: 450px; */
+        text-align: center;
+        padding: 10px 0 25px 0;
+
+    }
+    div{
+        height:100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    label{
+        font-weight: bold;
+    }
+    button{
+        height: 30px;
+        width: 80px;
+    }
+    button:hover{
+        background-color: rgb(243, 64, 19);
+        border: none;
+    }
+    input{
+        height: 25px;
+    }
+</style>
+
+</html>
